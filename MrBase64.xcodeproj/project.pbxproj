@@ -1,0 +1,342 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 55;
+	objects = {
+
+		111111111111111111111111 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1240;
+			};
+			buildConfigurationList = 555555555555555555555555 /* Build configuration list for PBXProject */;
+			compatibilityVersion = "Xcode 12.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 222222222222222222222222;
+			productRefGroup = 333333333333333333333333 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				444444444444444444444444 /* MrBase64 */,
+				999900000000000000000031 /* MrBase64Tests */,
+			);
+		};
+
+		222222222222222222222222 = {
+			isa = PBXGroup;
+			children = (
+				888888888888888888888888 /* MrBase64App.swift */,
+				888888888888888888888889 /* ContentView.swift */,
+				888888888888888888888890 /* Base64Encoder.swift */,
+				888888888888888888888891 /* Info.plist */,
+				333333333333333333333333 /* Products */,
+				999900000000000000000001 /* Tests */,
+			);
+			sourceTree = "<group>";
+		};
+
+		999900000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				999900000000000000000002 /* Base64EncoderTests.swift */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+
+		999900000000000000000002 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			name = Base64EncoderTests.swift;
+			path = Tests/UnitTests/Base64EncoderTests.swift;
+			sourceTree = "<group>";
+		};
+
+		333333333333333333333333 = {
+			isa = PBXGroup;
+			children = (
+				777777777777777777777777 /* mrbase64.app */,
+				999900000000000000000021 /* mrbase64.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+
+		999900000000000000000021 = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.cfbundle;
+			name = MrBase64.xctest;
+			path = MrBase64.xctest;
+			sourceTree = "<group>";
+		};
+
+		888888888888888888888888 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			name = MrBase64App.swift;
+			path = MrBase64App.swift;
+			sourceTree = "<group>";
+		};
+
+		888888888888888888888889 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			name = ContentView.swift;
+			path = ContentView.swift;
+			sourceTree = "<group>";
+		};
+
+		888888888888888888888890 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			name = Base64Encoder.swift;
+			path = Base64Encoder.swift;
+			sourceTree = "<group>";
+		};
+
+		888888888888888888888891 = {
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.xml;
+			name = Info.plist;
+			path = Info.plist;
+			sourceTree = "<group>";
+		};
+
+		777777777777777777777777 = {
+			isa = PBXFileReference;
+			lastKnownFileType = wrapper.application;
+			name = MrBase64.app;
+			path = MrBase64.app;
+			sourceTree = "<group>";
+		};
+
+		aaaaaaaaaaaaaaaa00000001 = {
+			isa = PBXBuildFile;
+			fileRef = 888888888888888888888888 /* MrBase64App.swift */;
+		};
+		aaaaaaaaaaaaaaaa00000002 = {
+			isa = PBXBuildFile;
+			fileRef = 888888888888888888888889 /* ContentView.swift */;
+		};
+		aaaaaaaaaaaaaaaa00000003 = {
+			isa = PBXBuildFile;
+			fileRef = 888888888888888888888890 /* Base64Encoder.swift */;
+		};
+		aaaaaaaaaaaaaaaa00000004 = {
+			isa = PBXBuildFile;
+			fileRef = 888888888888888888888891 /* Info.plist */;
+			settings = {
+				ATTRIBUTES = ( "InfoPlist" );
+			};
+		};
+		bbbbbbbbbbbbbbbbbbbbbbbb = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 111111111111111111111111 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 444444444444444444444444;
+			remoteInfo = MrBase64;
+		};
+		cccccccccccccccccccccccc = {
+			isa = PBXTargetDependency;
+			target = 444444444444444444444444 /* MrBase64 */;
+			targetProxy = bbbbbbbbbbbbbbbbbbbbbbbb /* PBXContainerItemProxy */;
+		};
+		999900000000000000000011 = {
+			isa = PBXBuildFile;
+			fileRef = 999900000000000000000002 /* Base64EncoderTests.swift */;
+		};
+
+		999999999999999999999999 = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				aaaaaaaaaaaaaaaa00000001,
+				aaaaaaaaaaaaaaaa00000002,
+				aaaaaaaaaaaaaaaa00000003,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+
+		999900000000000000000012 = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				999900000000000000000011,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+
+		999999999999999999999998 = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+
+		999999999999999999999997 = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = ();
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+
+		444444444444444444444444 = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 666666666666666666666666 /* Build configuration list for PBXNativeTarget */;
+			buildPhases = (
+				999999999999999999999999 /* Sources */,
+				999999999999999999999997 /* Frameworks */,
+				999999999999999999999998 /* Resources */,
+			);
+			buildRules = ();
+			dependencies = ();
+			hasScannedForEncodings = 0;
+				name = MrBase64;
+				productName = MrBase64;
+				productReference = 777777777777777777777777 /* MrBase64.app */;
+			productType = "com.apple.product-type.application";
+		};
+
+			999900000000000000000031 = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 999900000000000000000041 /* Build configuration list for PBXNativeTarget */;
+			buildPhases = (
+				999900000000000000000012 /* Sources */,
+				999999999999999999999997 /* Frameworks */,
+				999999999999999999999998 /* Resources */,
+			);
+			buildRules = ();
+				dependencies = (
+					cccccccccccccccccccccccc /* Dependency on mrbase64 */,
+				);
+			hasScannedForEncodings = 0;
+				name = MrBase64Tests;
+				productName = MrBase64Tests;
+				productReference = 999900000000000000000021 /* MrBase64.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+
+		555555555555555555555555 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				555555555555555555555556 /* Debug */,
+				555555555555555555555557 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+
+		999900000000000000000041 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				999900000000000000000042 /* Debug */,
+				999900000000000000000043 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+
+		999900000000000000000042 = {
+			isa = XCBuildConfiguration;
+			name = Debug;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = Tests/UnitTests/Info.plist;
+				SDKROOT = macosx;
+				PRODUCT_BUNDLE_IDENTIFIER = de.klngld.MrBase64Tests;
+					MACOSX_DEPLOYMENT_TARGET = 11.0;
+					TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MrBase64.app/Contents/MacOS/MrBase64";
+					BUNDLE_LOADER = "$(TEST_HOST)";
+			};
+		};
+
+		999900000000000000000043 = {
+			isa = XCBuildConfiguration;
+			name = Release;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = Tests/UnitTests/Info.plist;
+				SDKROOT = macosx;
+				PRODUCT_BUNDLE_IDENTIFIER = de.klngld.MrBase64Tests;
+					MACOSX_DEPLOYMENT_TARGET = 11.0;
+					TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mrbase64.app/Contents/MacOS/mrbase64";
+					BUNDLE_LOADER = "$(TEST_HOST)";
+			};
+		};
+
+		555555555555555555555556 = {
+			isa = XCBuildConfiguration;
+			name = Debug;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				CODE_SIGN_IDENTITY = "";
+				SDKROOT = macosx;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				SWIFT_VERSION = 5.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.klngld.MrBase64;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+			};
+		};
+
+		555555555555555555555557 = {
+			isa = XCBuildConfiguration;
+			name = Release;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				CODE_SIGN_IDENTITY = "";
+				SDKROOT = macosx;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				SWIFT_VERSION = 5.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.klngld.MrBase64;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+			};
+		};
+
+		666666666666666666666666 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				666666666666666666666667 /* Debug */,
+				666666666666666666666668 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+
+		666666666666666666666667 = {
+			isa = XCBuildConfiguration;
+			name = Debug;
+			buildSettings = {
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				SWIFT_VERSION = 5.0;
+					PRODUCT_BUNDLE_IDENTIFIER = de.klngld.MrBase64;
+					ALWAYS_SEARCH_USER_PATHS = NO;
+					ENABLE_TESTABILITY = YES;
+			};
+		};
+
+		666666666666666666666668 = {
+			isa = XCBuildConfiguration;
+			name = Release;
+			buildSettings = {
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				SWIFT_VERSION = 5.0;
+				PRODUCT_BUNDLE_IDENTIFIER = de.klngld.MrBase64;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+			};
+		};
+
+	};
+	rootObject = 111111111111111111111111 /* Project object */;
+}
