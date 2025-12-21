@@ -53,25 +53,6 @@ Technical notes
 - Bundle identifier: `de.klngld.MrBase64`
 - The app persists the output-format selection using `@AppStorage` (UserDefaults)
 
-AI provenance (disclaimer)
-
-This project was developed with substantial assistance from an AI coding agent operating within the repository. The AI produced scaffolding, performed iterative edits, and helped configure the Xcode project. A human developer reviewed changes and ran local build/test cycles.
-
-Summary of AI-assisted work:
-
-- Generated initial app scaffolding and source files
-- Performed iterative `xcodebuild` debugging and fixed build/test settings
-- Added unit tests and configured the test target linkage
-- Renamed project and updated bundle identifiers to `de.klngld.MrBase64`
-- Created mascot SVG artwork and integrated it into the UI
-- Implemented persistent format selection and filename+timestamp reference-style Markdown generation
-
-Note: Please review signing, entitlements, and distribution settings before releasing binaries.
-
-If you would like, I can convert the portrait SVG into an AppIcon asset, add UI tests, or add multi-image reference numbering.
-
-Last updated: 2025-12-21
-
 ### Build from command line
 
 You can build once you have an Xcode project set up:
@@ -137,3 +118,22 @@ GitHub Actions workflow (`.github/workflows/ci.yml`) automatically builds and te
 - `MrBase64Portrait.svg` — Portrait mascot for app icon
 - `Tests/UnitTests/Base64EncoderTests.swift` — Unit tests for encoding logic
 - `.github/workflows/ci.yml` — CI/CD workflow
+
+## AI provenance (disclaimer)
+
+This project was developed with substantial assistance from an AI coding agent operating within the repository. The AI produced scaffolding, performed iterative edits, and helped configure the Xcode project. A human developer reviewed changes and ran local build/test cycles.
+
+### Summary of AI-assisted work:
+
+- Generated initial app scaffolding and source files
+- Performed iterative `xcodebuild` debugging and fixed build/test settings
+- Added unit tests and configured the test target linkage
+- Renamed project and updated bundle identifiers to `de.klngld.MrBase64`
+- Created mascot SVG artwork and integrated it into the UI
+- Implemented persistent format selection and filename+timestamp reference-style Markdown generation
+
+Note: Please review signing, entitlements, and distribution settings before releasing binaries.
+
+If you would like, I can convert the portrait SVG into an AppIcon asset, add UI tests, or add multi-image reference numbering.
+
+Last updated: 2025-12-21
