@@ -12,6 +12,10 @@
     <string>6.0</string>
     <key>CFBundleName</key>
     <string>MrBase64</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0.0</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
     <key>CFBundleIconName</key>
     <string>AppIcon</string>
     <key>CFBundlePackageType</key>
@@ -49,6 +53,8 @@
                 <string>tiff</string>
                 <string>gif</string>
             </array>
+            <key>CFBundleTypeRole</key>
+            <string>Viewer</string>
             <key>LSHandlerRank</key>
             <string>Owner</string>
         </dict>

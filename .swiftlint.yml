@@ -1,0 +1,19 @@
+# SwiftLint configuration
+# See https://realm.github.io/SwiftLint/
+
+disabled_rules: # rule identifiers to disable
+  - trailing_whitespace
+  - todo
+
+opt_in_rules: # some optional rules we want to enable
+  - empty_count
+
+line_length: 120
+
+excluded:
+  - build
+  - Carthage
+  - .github
+  - Scripts
+
+# Custom rule examples can be added here

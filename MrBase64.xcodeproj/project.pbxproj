@@ -34,6 +34,7 @@
 				888888888888888888888889 /* ContentView.swift */,
 				888888888888888888888890 /* Base64Encoder.swift */,
 				888888888888888888888891 /* Info.plist */,
+				888888888888888888888892 /* Assets.xcassets */,
 				333333333333333333333333 /* Products */,
 				999900000000000000000001 /* Tests */,
 			);
@@ -107,6 +108,14 @@
 			sourceTree = "<group>";
 		};
 
+		888888888888888888888892 = {
+			isa = PBXFileReference;
+			lastKnownFileType = folder.assetcatalog;
+			name = Assets.xcassets;
+			path = Assets.xcassets;
+			sourceTree = "<group>";
+		};
+
 		777777777777777777777777 = {
 			isa = PBXFileReference;
 			lastKnownFileType = wrapper.application;
@@ -126,6 +135,10 @@
 		aaaaaaaaaaaaaaaa00000003 = {
 			isa = PBXBuildFile;
 			fileRef = 888888888888888888888890 /* Base64Encoder.swift */;
+		};
+		aaaaaaaaaaaaaaaaa00000005 = {
+			isa = PBXBuildFile;
+			fileRef = 888888888888888888888892 /* Assets.xcassets */;
 		};
 		aaaaaaaaaaaaaaaa00000004 = {
 			isa = PBXBuildFile;
@@ -175,6 +188,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				aaaaaaaaaaaaaaaaa00000005,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +334,7 @@
 					PRODUCT_BUNDLE_IDENTIFIER = de.klngld.MrBase64;
 					ALWAYS_SEARCH_USER_PATHS = NO;
 					ENABLE_TESTABILITY = YES;
+					ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 			};
 		};
 
@@ -334,6 +349,7 @@
 				SWIFT_VERSION = 5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = de.klngld.MrBase64;
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 			};
 		};
 

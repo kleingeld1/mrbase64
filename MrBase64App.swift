@@ -49,6 +49,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         sender.reply(toOpenOrPrint: .success)
     }
+
+    func applicationDidFinishLaunching(_ notification: Notification) {
+        // Make any created windows non-resizable and clamp size to current frame
+        // This ensures the main window is fixed size and cannot be resized by the user.
+        DispatchQueue.main.async {
+            for window in NSApp.windows {
+                window.styleMask.remove(.resizable)
+                window.minSize = window.frame.size
+                window.maxSize = window.frame.size
+            }
+        }
+
+        // Also observe future windows in case SwiftUI creates them afterwards
+        NotificationCenter.default.addObserver(forName: NSWindow.didBecomeMainNotification, object: nil, queue: .main) { note in
+            if let window = note.object as? NSWindow {
+                window.styleMask.remove(.resizable)
+                window.minSize = window.frame.size
+                window.maxSize = window.frame.size
+            }
+        }
+    }
+
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        return true
+    }
 }
 
 extension Notification.Name {

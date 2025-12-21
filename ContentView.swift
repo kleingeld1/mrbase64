@@ -44,7 +44,7 @@ struct ContentView: View {
                         Text("Output Format").font(.caption).fontWeight(.semibold).foregroundColor(.secondary)
                         HStack(spacing: 16) {
                             HStack(spacing: 6) {
-                                Image(systemName: outputFormat == "base64" ? "radiobutton.circle.fill" : "circle")
+                                Image(systemName: outputFormat == "base64" ? "circle.fill" : "circle")
                                     .foregroundColor(outputFormat == "base64" ? .blue : .secondary)
                                 Text("Base64")
                                     .font(.caption)
@@ -56,7 +56,7 @@ struct ContentView: View {
                             }
                             
                             HStack(spacing: 6) {
-                                Image(systemName: outputFormat == "markdown" ? "radiobutton.circle.fill" : "circle")
+                                Image(systemName: outputFormat == "markdown" ? "circle.fill" : "circle")
                                     .foregroundColor(outputFormat == "markdown" ? .blue : .secondary)
                                 Text("Markdown")
                                     .font(.caption)
@@ -199,71 +199,19 @@ struct ContentView: View {
 
 struct MascotView: View {
     var body: some View {
-        ZStack {
-            // Simple mascot representation as a fallback
-            VStack(spacing: 4) {
-                // Head
-                Circle()
-                    .fill(Color(red: 0.95, green: 0.85, blue: 0.75))
-                    .frame(width: 80, height: 80)
-                    .overlay(
-                        VStack(spacing: 8) {
-                            HStack(spacing: 20) {
-                                Circle().fill(Color.white).frame(width: 14, height: 14)
-                                    .overlay(Circle().fill(Color.black).frame(width: 8, height: 8))
-                                Circle().fill(Color.white).frame(width: 14, height: 14)
-                                    .overlay(Circle().fill(Color.black).frame(width: 8, height: 8))
-                            }
-                            Path { path in
-                                path.move(to: CGPoint(x: 0, y: 0))
-                                path.addCurve(
-                                    to: CGPoint(x: 30, y: 0),
-                                    control1: CGPoint(x: 10, y: 20),
-                                    control2: CGPoint(x: 20, y: 20)
-                                )
-                            }
-                            .stroke(Color.red, lineWidth: 2)
-                            .frame(width: 30, height: 20)
-                        }
-                    )
-                
-                // Shirt
-                RoundedRectangle(cornerRadius: 8)
-                    .fill(Color.white)
-                    .frame(width: 100, height: 60)
-                    .overlay(
-                        VStack {
-                            HStack {
-                                Text("MR.")
-                                    .font(.system(.caption, design: .monospaced))
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.white)
-                                    .frame(height: 10)
-                                    .padding(4)
-                                    .background(Color.red)
-                                Spacer()
-                            }
-                            .padding(4)
-                            
-                            Text("BASE64")
-                                .font(.system(.caption2, design: .monospaced))
-                                .fontWeight(.bold)
-                                .foregroundColor(.black)
-                        }
-                        .padding(6)
-                    )
-            }
-            
-            VStack {
-                HStack {
-                    Text("👋").font(.system(size: 32))
-                    Spacer()
-                }
-                .padding()
-                Spacer()
-            }
+        // Display the new Mr. Base64 mascot character (full-body illustration)
+        // The image shows a professional character with glasses, white shirt, tie,
+        // holding a document with base64 data and giving a thumbs up
+        VStack {
+            Image("MascotCharacter")
+                .resizable()
+                .interpolation(.high)
+                .scaledToFit()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
         .frame(height: 280)
+        .background(Color.white.opacity(0.5))
+        .cornerRadius(8)
     }
 }
 
