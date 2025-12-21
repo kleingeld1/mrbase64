@@ -1,0 +1,49 @@
+{
+  "" : {
+    "diagnostics" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/MrBase64-primary.dia",
+    "emit-module-dependencies" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/MrBase64-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/MrBase64-primary-emit-module.dia",
+    "pch" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/MrBase64-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/MrBase64-primary.swiftdeps"
+  },
+  "/Users/vincentschwarz/dev/mrbase64/Base64Encoder.swift" : {
+    "const-values" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/Base64Encoder.swiftconstvalues",
+    "dependencies" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/Base64Encoder.d",
+    "diagnostics" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/Base64Encoder.dia",
+    "index-unit-output-path" : "/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/Base64Encoder.o",
+    "llvm-bc" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/Base64Encoder.bc",
+    "object" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/Base64Encoder.o",
+    "swift-dependencies" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/Base64Encoder.swiftdeps",
+    "swiftmodule" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/Base64Encoder~partial.swiftmodule"
+  },
+  "/Users/vincentschwarz/dev/mrbase64/ContentView.swift" : {
+    "const-values" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/ContentView.swiftconstvalues",
+    "dependencies" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/ContentView.d",
+    "diagnostics" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/ContentView.dia",
+    "index-unit-output-path" : "/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/ContentView.o",
+    "swift-dependencies" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/ContentView.swiftdeps",
+    "swiftmodule" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/ContentView~partial.swiftmodule"
+  },
+  "/Users/vincentschwarz/dev/mrbase64/MrBase64App.swift" : {
+    "const-values" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/MrBase64App.swiftconstvalues",
+    "dependencies" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/MrBase64App.d",
+    "diagnostics" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/MrBase64App.dia",
+    "index-unit-output-path" : "/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/MrBase64App.o",
+    "llvm-bc" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/MrBase64App.bc",
+    "object" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/MrBase64App.o",
+    "swift-dependencies" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/MrBase64App.swiftdeps",
+    "swiftmodule" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/MrBase64App~partial.swiftmodule"
+  },
+  "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/vincentschwarz/dev/mrbase64/build/MrBase64.build/Release/MrBase64.build/Objects-normal/arm64/GeneratedAssetSymbols~partial.swiftmodule"
+  }
+}

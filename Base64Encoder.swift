@@ -29,4 +29,29 @@ enum Base64Encoder {
         default: return "application/octet-stream"
         }
     }
+
+    /// Generate a base64 string and a reference-style Markdown data-URL for an image.
+    /// - Parameters:
+    ///   - data: The image data
+    ///   - filename: The filename used for markdown reference generation
+    ///   - uti: The UTI for mime type detection
+    ///   - date: Date used to create a stable timestamp for tests (defaults to now)
+    /// - Returns: A tuple of `(base64String, markdownString)`
+    static func makeMarkdown(from data: Data, filename: String, uti: String, date: Date = Date()) -> (base64String: String, markdown: String) {
+        let base64 = base64String(from: data)
+        let mime = mimeType(for: uti, fallbackFilename: filename)
+        let dataUrl = "data:\(mime);base64,\(base64)"
+
+        let filenameWithoutExt = (filename as NSString).deletingPathExtension
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyMMdd-HHmmss"
+        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        let timestamp = dateFormatter.string(from: date)
+        let reference = "\(filenameWithoutExt)-\(timestamp)"
+
+        let markdown = "![\(filename)][\(reference)]\n\n[\(reference)]: \(dataUrl)"
+        return (base64, markdown)
+    }
 }
+
