@@ -133,7 +133,7 @@ If you want, I can:
 ---
 
 ## Release 1.0.0 — 2025-12-21
-Stable initial release. See `CHANGELOG.md` for details.
+Stable initial release. See `CHANGELOG.md` for details and subsequent releases.
 
 _Last updated: 2025-12-21_
 
