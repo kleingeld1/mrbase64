@@ -2,6 +2,14 @@ import Foundation
 import UniformTypeIdentifiers
 
 enum Base64Encoder {
+    private static let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyMMdd-HHmmss"
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        return formatter
+    }()
+
     static func base64String(from data: Data) -> String {
         return data.base64EncodedString()
     }
@@ -39,14 +47,14 @@ enum Base64Encoder {
     /// - Returns: A tuple of `(base64String, markdownString)`
     static func makeMarkdown(from data: Data, filename: String, uti: String, date: Date = Date()) -> (base64String: String, markdown: String) {
         let base64 = base64String(from: data)
+        return makeMarkdown(fromBase64: base64, filename: filename, uti: uti, date: date)
+    }
+
+    static func makeMarkdown(fromBase64 base64: String, filename: String, uti: String, date: Date = Date()) -> (base64String: String, markdown: String) {
         let mime = mimeType(for: uti, fallbackFilename: filename)
         let dataUrl = "data:\(mime);base64,\(base64)"
 
         let filenameWithoutExt = (filename as NSString).deletingPathExtension
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyMMdd-HHmmss"
-        dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
         let timestamp = dateFormatter.string(from: date)
         let reference = "\(filenameWithoutExt)-\(timestamp)"
 
@@ -54,4 +62,3 @@ enum Base64Encoder {
         return (base64, markdown)
     }
 }
-

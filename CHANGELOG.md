@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.1.0] - 2025-12-23
+### Changed
+- Moved encoding and file loading off the main thread to keep the UI responsive with large images.
+- Reworked output rendering to use an `NSTextView` for smoother large-text updates.
+- Added output caching so Base64/Markdown switching does not recompute or block.
+
 ## [1.0.0] - 2025-12-21
 ### Added
 - Initial stable release of **MrBase64**: encode images to Base64 and copy output as raw Base64 or Markdown reference-style data-URLs.
