@@ -2,12 +2,12 @@ import SwiftUI
 import UniformTypeIdentifiers
 
 struct ContentView: View {
-    @State private var nsImage: NSImage? = nil
+    @State private var nsImage: NSImage?
     @State private var filename: String = ""
-    @State private var sourceData: Data? = nil
+    @State private var sourceData: Data?
     @State private var sourceUTI: String = UTType.image.identifier
-    @State private var base64Cache: String? = nil
-    @State private var markdownCache: String? = nil
+    @State private var base64Cache: String?
+    @State private var markdownCache: String?
     @State private var encodeToken = UUID()
     @State private var isTargeted: Bool = false
     @AppStorage("MrBase64.outputFormat") private var outputFormat: String = "base64"
@@ -81,21 +81,21 @@ struct ContentView: View {
             }
             if prov.hasItemConformingToTypeIdentifier(UTType.image.identifier) {
                 prov.loadDataRepresentation(forTypeIdentifier: UTType.image.identifier) { data, _ in
-                    if let d = data {
+                    if let imageData = data {
                         let pastedFilename = "pasted-image"
                         DispatchQueue.global(qos: .userInitiated).async {
-                            let image = NSImage(data: d)
+                            let image = NSImage(data: imageData)
                             DispatchQueue.main.async {
-                            self.nsImage = image
-                            self.filename = pastedFilename
-                            self.sourceData = d
-                            self.sourceUTI = UTType.image.identifier
-                            self.base64Cache = nil
-                            self.markdownCache = nil
-                            self.generateOutput()
+                                self.nsImage = image
+                                self.filename = pastedFilename
+                                self.sourceData = imageData
+                                self.sourceUTI = UTType.image.identifier
+                                self.base64Cache = nil
+                                self.markdownCache = nil
+                                self.generateOutput()
+                            }
                         }
                     }
-                }
                 }
                 return true
             }
@@ -134,7 +134,9 @@ struct ContentView: View {
             let base64Used = cachedBase64 ?? Base64Encoder.base64String(from: data)
             let output: String
             if format == "markdown" {
-                output = Base64Encoder.makeMarkdown(fromBase64: base64Used, filename: resolvedFilename, uti: uti).markdown
+                output = Base64Encoder
+                    .makeMarkdown(fromBase64: base64Used, filename: resolvedFilename, uti: uti)
+                    .markdown
             } else {
                 output = base64Used
             }
@@ -152,9 +154,9 @@ struct ContentView: View {
     }
 
     private func copyOutput() {
-        let pb = NSPasteboard.general
-        pb.clearContents()
-        pb.setString(displayedString, forType: .string)
+        let pasteboard = NSPasteboard.general
+        pasteboard.clearContents()
+        pasteboard.setString(displayedString, forType: .string)
     }
 
     private func clear() {
@@ -246,10 +248,16 @@ private struct OutputView: NSViewRepresentable {
         textView.isHorizontallyResizable = false
         textView.autoresizingMask = [.width]
         textView.textContainer?.widthTracksTextView = true
-        textView.textContainer?.containerSize = NSSize(width: 0, height: CGFloat.greatestFiniteMagnitude)
+        textView.textContainer?.containerSize = NSSize(
+            width: 0,
+            height: CGFloat.greatestFiniteMagnitude
+        )
         textView.textContainer?.lineFragmentPadding = 0
         textView.textContainerInset = NSSize(width: 6, height: 6)
-        textView.font = NSFont.monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: .regular)
+        textView.font = NSFont.monospacedSystemFont(
+            ofSize: NSFont.systemFontSize,
+            weight: .regular
+        )
         textView.allowsUndo = false
         textView.isAutomaticLinkDetectionEnabled = false
         textView.isAutomaticDataDetectionEnabled = false
@@ -271,7 +279,10 @@ private struct OutputView: NSViewRepresentable {
 
     func updateNSView(_ nsView: NSScrollView, context: Context) {
         guard let textView = nsView.documentView as? NSTextView else { return }
-        textView.textContainer?.containerSize = NSSize(width: nsView.contentSize.width, height: CGFloat.greatestFiniteMagnitude)
+        textView.textContainer?.containerSize = NSSize(
+            width: nsView.contentSize.width,
+            height: CGFloat.greatestFiniteMagnitude
+        )
         textView.frame.size.width = nsView.contentSize.width
         if textView.string != text, let storage = textView.textStorage {
             storage.beginEditing()
@@ -280,7 +291,6 @@ private struct OutputView: NSViewRepresentable {
         }
     }
 }
-
 
 struct MascotView: View {
     var body: some View {

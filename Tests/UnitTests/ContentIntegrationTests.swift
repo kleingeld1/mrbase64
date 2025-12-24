@@ -3,20 +3,20 @@ import XCTest
 
 final class ContentIntegrationTests: XCTestCase {
     func testMakeMarkdownGeneratesExpectedBase64AndMarkdown() {
-        let data = Data([1,2,3,4]) // AQIDBA==
+        let data = Data([1, 2, 3, 4]) // AQIDBA==
         let filename = "example.png"
         let uti = "public.png"
 
-        var dc = DateComponents()
-        dc.year = 2025
-        dc.month = 12
-        dc.day = 21
-        dc.hour = 10
-        dc.minute = 20
-        dc.second = 30
-        dc.timeZone = TimeZone(secondsFromGMT: 0)
+        var dateComponents = DateComponents()
+        dateComponents.year = 2025
+        dateComponents.month = 12
+        dateComponents.day = 21
+        dateComponents.hour = 10
+        dateComponents.minute = 20
+        dateComponents.second = 30
+        dateComponents.timeZone = TimeZone(secondsFromGMT: 0)
         let calendar = Calendar(identifier: .gregorian)
-        let date = calendar.date(from: dc)!
+        let date = calendar.date(from: dateComponents)!
 
         let result = Base64Encoder.makeMarkdown(from: data, filename: filename, uti: uti, date: date)
 
@@ -29,10 +29,10 @@ final class ContentIntegrationTests: XCTestCase {
     }
 
     func testPasteboardCopySimulation() {
-        let pb = NSPasteboard.general
-        pb.clearContents()
-        let s = "test-pasteboard-string"
-        pb.setString(s, forType: .string)
-        XCTAssertEqual(pb.string(forType: .string), s)
+        let pasteboard = NSPasteboard.general
+        pasteboard.clearContents()
+        let value = "test-pasteboard-string"
+        pasteboard.setString(value, forType: .string)
+        XCTAssertEqual(pasteboard.string(forType: .string), value)
     }
 }

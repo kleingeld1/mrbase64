@@ -26,7 +26,7 @@ final class Base64EncoderTests: XCTestCase {
     }
 
     func testMakeMarkdownWithFixedDate() throws {
-        let data = "Hello".data(using: .utf8)!
+        let data = Data("Hello".utf8)
         let filename = "hello.txt"
         let uti = "public.plain-text"
         let date = Date(timeIntervalSince1970: 0)
@@ -34,6 +34,8 @@ final class Base64EncoderTests: XCTestCase {
         let result = Base64Encoder.makeMarkdown(from: data, filename: filename, uti: uti, date: date)
 
         XCTAssertEqual(result.base64String, "SGVsbG8=")
-        XCTAssertEqual(result.markdown, "![hello.txt][hello-700101-000000]\n\n[hello-700101-000000]: data:text/plain;base64,SGVsbG8=")
+        let expected = "![hello.txt][hello-700101-000000]\n\n" +
+            "[hello-700101-000000]: data:text/plain;base64,SGVsbG8="
+        XCTAssertEqual(result.markdown, expected)
     }
 }

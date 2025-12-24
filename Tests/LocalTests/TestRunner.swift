@@ -3,9 +3,9 @@ import Foundation
 // Simple assertions for Base64Encoder without adding an Xcode test target.
 // This file will be compiled together with Base64Encoder.swift in CI.
 
-func assertEqual(_ a: String, _ b: String, message: String) {
-    if a != b {
-        print("FAIL: \(message) — expected: [\(b)] got: [\(a)]")
+func assertEqual(_ lhs: String, _ rhs: String, message: String) {
+    if lhs != rhs {
+        print("FAIL: \(message) — expected: [\(rhs)] got: [\(lhs)]")
         exit(2)
     }
 }

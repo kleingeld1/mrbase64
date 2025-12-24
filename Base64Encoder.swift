@@ -9,33 +9,39 @@ enum Base64Encoder {
         formatter.timeZone = TimeZone(secondsFromGMT: 0)
         return formatter
     }()
+    private static let utiMimeFallbacks: [(UTType, String)] = [
+        (.png, "image/png"),
+        (.jpeg, "image/jpeg"),
+        (.gif, "image/gif"),
+        (.tiff, "image/tiff"),
+        (.image, "image/*")
+    ]
+    private static let extensionMimeTypes: [String: String] = [
+        "png": "image/png",
+        "jpg": "image/jpeg",
+        "jpeg": "image/jpeg",
+        "gif": "image/gif",
+        "tiff": "image/tiff",
+        "tif": "image/tiff",
+        "heic": "image/heic",
+        "avif": "image/avif"
+    ]
 
     static func base64String(from data: Data) -> String {
         return data.base64EncodedString()
     }
 
     static func mimeType(for uti: String, fallbackFilename: String = "") -> String {
-        if let ut = UTType(uti) {
-            if let preferred = ut.preferredMIMEType {
+        if let type = UTType(uti) {
+            if let preferred = type.preferredMIMEType {
                 return preferred
             }
-            if ut.conforms(to: .png) { return "image/png" }
-            if ut.conforms(to: .jpeg) { return "image/jpeg" }
-            if ut.conforms(to: .gif) { return "image/gif" }
-            if ut.conforms(to: .tiff) { return "image/tiff" }
-            if ut.conforms(to: .image) { return "image/*" }
+            if let fallback = utiMimeFallbacks.first(where: { type.conforms(to: $0.0) }) {
+                return fallback.1
+            }
         }
-        // fallback by extension
         let ext = (fallbackFilename as NSString).pathExtension.lowercased()
-        switch ext {
-        case "png": return "image/png"
-        case "jpg", "jpeg": return "image/jpeg"
-        case "gif": return "image/gif"
-        case "tiff", "tif": return "image/tiff"
-        case "heic": return "image/heic"
-        case "avif": return "image/avif"
-        default: return "application/octet-stream"
-        }
+        return extensionMimeTypes[ext] ?? "application/octet-stream"
     }
 
     /// Generate a base64 string and a reference-style Markdown data-URL for an image.
@@ -45,12 +51,22 @@ enum Base64Encoder {
     ///   - uti: The UTI for mime type detection
     ///   - date: Date used to create a stable timestamp for tests (defaults to now)
     /// - Returns: A tuple of `(base64String, markdownString)`
-    static func makeMarkdown(from data: Data, filename: String, uti: String, date: Date = Date()) -> (base64String: String, markdown: String) {
+    static func makeMarkdown(
+        from data: Data,
+        filename: String,
+        uti: String,
+        date: Date = Date()
+    ) -> (base64String: String, markdown: String) {
         let base64 = base64String(from: data)
         return makeMarkdown(fromBase64: base64, filename: filename, uti: uti, date: date)
     }
 
-    static func makeMarkdown(fromBase64 base64: String, filename: String, uti: String, date: Date = Date()) -> (base64String: String, markdown: String) {
+    static func makeMarkdown(
+        fromBase64 base64: String,
+        filename: String,
+        uti: String,
+        date: Date = Date()
+    ) -> (base64String: String, markdown: String) {
         let mime = mimeType(for: uti, fallbackFilename: filename)
         let dataUrl = "data:\(mime);base64,\(base64)"
 

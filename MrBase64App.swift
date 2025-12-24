@@ -62,7 +62,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         // Also observe future windows in case SwiftUI creates them afterwards
-        NotificationCenter.default.addObserver(forName: NSWindow.didBecomeMainNotification, object: nil, queue: .main) { note in
+        NotificationCenter.default.addObserver(
+            forName: NSWindow.didBecomeMainNotification,
+            object: nil,
+            queue: .main
+        ) { note in
             if let window = note.object as? NSWindow {
                 window.styleMask.remove(.resizable)
                 window.minSize = window.frame.size
