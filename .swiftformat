@@ -1,6 +1,5 @@
 # SwiftFormat configuration (https://github.com/nicklockwood/SwiftFormat)
 # Adjust rules as desired. This file is read by `swiftformat`.
-indent 4
 linebreaks lf
 wraparguments before-first
 wrapcollections before-first
